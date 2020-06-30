@@ -1,0 +1,126 @@
+.container{
+  background-color: lavender;
+}
+
+.page_title{
+  text-align: center;
+  font-family: serif;
+  background-color: lightskyblue;
+}
+
+.abstruct h3{
+  padding-top: 10px;
+  text-align: center;
+}
+.abstruct p{
+  padding-left: 20px;
+}
+.img_check_cord{
+  padding-left: 30px;
+}
+
+.reference h3{
+  padding-top: 30px;
+  padding-left: 15px;
+}
+.reference p{
+  padding-left: 20px;
+}
+.img_check_console{
+  height: 360px;
+  padding-top: 10px;
+}
+.img_check_png{
+  padding-left: 30px;
+  padding-right: 10px;
+}
+.img_check_console p{
+  padding-top: 100px;
+}
+
+.about_jslibfile{
+  width: 80%;
+  margin: 0 auto;
+}
+.about_jslibfile h3{
+  text-align: center;
+  margin-top: 50px;
+  background-color: powderblue;
+}
+.img_jslib_block{
+  height: 240px;
+}
+.img_jslib{
+  padding-right: 15px;
+}
+.img_jslib_block p{
+  padding-top: 100px;
+}
+.img_plugin_block{
+  height: 120px;
+}
+.img_plugin{
+  padding-right: 15px;
+  margin-top: 15px;
+}
+.img_plugin_block p{
+  padding-top: 55px;
+}
+
+.about_script{
+  width: 80%;
+  margin: 0 auto;
+}
+.about_script h3{
+  text-align: center;
+  margin-top: 65px;
+  background-color: powderblue;
+}
+.img_script_block{
+  height: 220px;
+}
+.img_script{
+  padding-right: 15px;
+}
+.img_script_block p{
+  padding-top: 100px;
+}
+
+.img_scriptcode_block{
+  height: 625px;
+}
+.img_script_code{
+  padding-top: 15px;
+  padding-right: 15px;
+}
+.img_scriptcode_block p{
+  padding-top: 150px;
+}
+
+
+
+.toppage_block{
+  margin-top: 80px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.link_to_toppage{
+  display: inline-block;
+  padding: 0.3em 1em;
+  background: orange;
+  color: white;
+}
+
+
+footer{
+  text-align: center;
+  background-color: #89c7de;
+
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 5;
+
+  margin-top: 25px;
+  padding-top: 25px;
+}

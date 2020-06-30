@@ -1,0 +1,145 @@
+.container{
+  background-color: lavender;
+}
+
+.page_title{
+  text-align: center;
+  font-family: serif;
+  background-color: lightskyblue;
+}
+
+.abstruct h3{
+  padding-top: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
+.abstruct p{
+  padding-left: 20px;
+}
+
+.file_location{
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.file_location img{
+  padding-right: 15px;
+}
+
+.about_POST{
+  width: 80%;
+  margin: 0 auto;
+}
+.about_POST h3{
+  text-align: center;
+  margin-top: 50px;
+  background-color: powderblue;
+}
+.about_POST ol  {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.about_POST ol li  {
+  list-style: none;
+  list-style-position: outside;
+  margin: 0;
+  padding-left: 1.25em;
+  padding-bottom: 15px;
+}
+.about_POST ol li span {
+  position: absolute;
+  left: 0;
+  margin: 0;
+  color: red;
+  padding-right: 10px;
+}
+
+.about_dbconnectphp{
+  width: 80%;
+  margin: 0 auto;
+}
+.about_dbconnectphp h3{
+  text-align: center;
+  margin-top: 50px;
+  background-color: powderblue;
+}
+.about_dbconnectphp img{
+  padding-right: 15px;
+}
+.about_dbconnectphp .text{
+  padding-top: 80px;
+}
+.about_dbconnectphp img{
+}
+.about_dbconnectphp{
+  height: 460px;
+}
+
+.about_echo_dbvalue{
+  width: 80%;
+  margin: 0 auto;
+}
+.about_echo_dbvalue h3{
+  text-align: center;
+  margin-top: 50px;
+  background-color: powderblue;
+}
+.about_echo_dbvalue img{
+  padding-right: 15px;
+}
+.about_echo_dbvalue .text1{
+  height: 310px;
+  vertical-align: middle;
+}
+.text1 .text1_1{
+  padding-top: 70px;
+}
+.img_test_cord2{
+  padding-top: 20px;
+}
+
+.about_check{
+  width: 80%;
+  margin: 0 auto;
+}
+.about_check h3{
+  text-align: center;
+  margin-top: 50px;
+  background-color: powderblue;
+}
+.img_check_console{
+  padding-right: 15px;
+}
+.check_console_block{
+  padding-top: 20px;
+  height: 360px;
+}
+.check_console_text{
+  padding-top: 40px;
+}
+
+.toppage_block{
+  margin-top: 80px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.link_to_toppage{
+  display: inline-block;
+  padding: 0.3em 1em;
+  background: orange;
+  color: white;
+}
+
+
+footer{
+  text-align: center;
+  background-color: #89c7de;
+
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 5;
+
+  margin-top: 25px;
+  padding-top: 25px;
+}

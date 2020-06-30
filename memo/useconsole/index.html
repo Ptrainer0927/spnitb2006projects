@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google AdSence -->
+    <script data-ad-client="ca-pub-8054378565932101" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168768697-1"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+
+<link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+<h1 class="page_title">デバッグのために、Unity WebGLから文字列をブラウザのコンソールに表示する</h1>
+
+<div class="container">
+
+<div class="abstruct">
+  <h3>本記事の概要</h3>
+  <p>本ページでは、Unity WebGLからブラウザのコンソールへ文字列を表示する方法について記しています。<br>
+    Unityを用いてWebGLのアプリケーションを作成する場合、サーバー上で動かした際の動作を見る方法が
+    ないと、開発が困難であると思います。本ページのように設定を行うと、ブラウザのコンソールに任意の文字列を
+    表示することができます。任意の値を表示させて確認することができるので、WebGLアプリケーションを作成する際の
+    デバッグに役立ちます。
+  </p>
+  <p>本ページのように設定を行うと、以下のように、Unityのスクリプトからブラウザのコンソールへ文字列を表示することができます。
+    </p>
+    <div class="img_check_cord">
+    <img src="img/check_cord.png">
+    </div>
+  <p>上図の赤枠のようにLogUtil.OutputConsoleLog("任意の文字列")を記述すると、</p>
+  <div class="img_check_console">
+    <img src="img/check_console.png" align="left" class="img_check_png">
+    <p>左図のようにWebブラウザのコンソール画面(F12キーで開く)に任意の文字列を表示できるようになります。</p>
+  </div>
+</div>
+
+<div class="reference">
+<h3>参考</h3>
+  <p>
+    本ページの内容は、<a href="https://gomafrontier.com/unity/2021">https://gomafrontier.com/unity/2021</a>に
+    書かれているものです。
+</p>
+</div>
+
+<div class="about_jslibfile">
+  <h3>jslibファイルをPluginフォルダに追加する</h3>
+  <div class="img_jslib_block">
+    <img src="img/jslib.png" align="left" class="img_jslib">
+    <p>左図のようにテキストエディタで記述し、.jslibファイルとして保存します。</p>
+  </div>
+  <div class="img_plugin_block">
+    <img src="img/plugin.png" align="left" class="img_plugin">
+    <p>Unityのプロジェクトフォルダ>Assets>Plugin へ作成したjslibファイルを追加します。</p>
+  </div>
+</div>
+
+<div class="about_script">
+  <h3>Unityのスクリプトを追加する</h3>
+  <p>次にUnityへ、先ほど作成した関数を呼び出す関数を作成します。
+  どこからでも呼び出せるように静的な関数として定義しています。</p>
+
+  <div class="img_script_block">
+    <img src="img/script.png" align="left" class="img_script">
+    <p>Unityへスクリプトを追加してください。左図ではLogUtilスクリプトを追加しています。</p>
+  </div>
+
+  <div class="img_scriptcode_block">
+    <img src="img/script_code.png" align="left" class="img_script_code">
+    <p>追加したスクリプトは、左図のように記述してください。</p>
+  </div>
+
+  <p>以上で設定は終わりです。<br>
+    Unityのスクリプトで、概要に記したように、LogUtil.OutputConsoleLog("任意の文字列")と関数を呼ぶと、
+    WebGL形式でビルドし、実行した際に、ブラウザのコンソールに"任意の文字列"が表示されるようになります。
+  </p>
+
+</div>
+
+
+
+
+<div class="toppage_block">
+  <a href="../../index.html" class="link_to_toppage">トップページへ</a>
+</div>
+
+</div>
+
+<footer>
+  <a href = "privacy_policy.html" class="plicy">プライバシーポリシー</a>
+</footer>
+
+</body>
+
+</html>

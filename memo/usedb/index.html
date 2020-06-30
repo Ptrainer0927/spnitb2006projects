@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google AdSence -->
+    <script data-ad-client="ca-pub-8054378565932101" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168768697-1"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+
+<link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+<h1 class="page_title">Unity WebGLからPHPファイルを介してデータベース(MySQL)を利用する</h1>
+
+<div class="container">
+
+<div class="abstruct">
+  <h3>本記事の概要</h3>
+  <p>本ページでは、Unity WebGLからPHPファイルを介してデータベース(MySQL)から所定のデータを
+  取得し、利用する方法について記します。<br>WebGL側から、PHPファイルへPOSTを送り、
+  送られたPOSTの値に応じて、PHPファイルで所定のデータベースへアクセスし、その値をWebGLへ
+  返し、WebGLで、PHPファイルから返された値を利用する、という方法について書いています。</p>
+</div>
+
+<div class="file_location">
+  <h4>ファイル位置について</h4>
+  <img src="img/file.png" align="left">
+  <p>本ページでは図のようなファイル構成であるとして、説明していきます。</p>
+  <p>Build : UnityでWebGL形式でビルドした際に作られるファイル<br>
+    TemplateData : UnityでWebGL形式でビルドした際に作られるファイル<br>
+    index.html : UnityでWebGL形式でビルドした際に作られるファイル。このhtmlファイルにWebGLが埋め込まれる<br>
+    mysql_connect.php : データベースに接続するための処理を書いたファイル<br>
+    test.php : WebGL側からPOSTを受け、POSTの値に応じてデータベースの値を返すファイル<br>
+  </p>
+</div>
+
+<div class="about_POST">
+  <h3>Unity WebGLからPHPファイルへPOSTする</h3>
+  <p>UnityからHTTPリクエストを出すために、<a href="https://docs.unity3d.com/ja/2018.4/ScriptReference/Networking.UnityWebRequest.html">UnityWebRequest</a>
+  を使用します。</p>
+  <img src="img/post_cord.png">
+  <p>UnityWebRequestを用いて、HTTPリクエストを出す処理は、コルーチン内で行う必要があります。
+  ③に書かれているように、リクエストが終了するまで、他の処理に移るようにしなければ、
+  ブラウザが操作不能になってしまうためです。
+  </p>
+  <ol>
+    <li><span>&#9312;</span>POSTする値を設定しています。連想配列postがリクエストされるページで、$_POST
+      として受け取られます。
+    </li>
+    <li><span>&#9313;</span>HTTPリクエストを設定します。第一引数がリクエストを出すURI、第二引数がPOSTする連想配列になってます。
+    </li>
+    <li><span>&#9314;</span>request.SendWebRequest()でHTTPリクエストが出されます。request.SendWebRequest()が終了するまで、
+    この関数内の処理はここで区切って、他の処理が行われます。
+    </li>
+    <li><span>&#9315;</span>リクエストを出したPHPファイルの値を受け取って、変数rankingに代入しています。
+    request.downloadHandler.textではPHPファイルのテキストを受け取ります。
+    </li>
+  </ol>
+
+  <p>
+    図では例として、post["post_num"]にデータベースに登録する整数値、post["table_name"]にどのテーブルに登録するか、
+    を指定しています。
+  </p>
+</div>
+
+<div class="about_dbconnectphp">
+  <h3>データベースへ接続するPHPファイル</h3>
+  <img src="img/dbconnect_cord.png" align="left">
+  <div class="text">
+    <p>図はデータベースへ接続するためのPHPファイル(mysql_connect.php)です。<br>
+      データベース名、ホスト名、ユーザ名、ルート名を設定してください。
+    </p>
+    <p>
+      WebGLからリクエストを受けるPHPファイル(test.php)が実行される際、最初にこのファイルを実行し、
+      データベースへ接続します。
+    </p>
+  </div>
+</div>
+
+<div class="about_echo_dbvalue">
+  <h3>得たいデータベースの値をWebGLへ渡す</h3>
+  <p>test.phpファイルで、Unity WebGLからPOSTされた値を用いて、SQL文で、所定の値をデータベースに登録、
+  または、使いたいデータベースの値を取得し、WebGLへと渡します。</p>
+  <img src="img/test_cord.png" align="left">
+    <div class="text1">
+      <div class="text1_1">
+      <p>初めに、前節で示したmysql_connect.phpを読み込みます。
+       mysql_connect.phpに書かれたconnectDB()を実行し、$pdoを介してデータベースとやり取りできるようにしています。
+      </p>
+      <p>
+       Unity WebGL側からPOSTした値を用いて、SQL文で所定の値をデータベースに記録したり、
+       使いたい値をデータベースから取り出したりします。
+      </p>
+      </div>
+    </div>
+  <img src="img/test_cord2.png" align="left" class="img_test_cord2">
+  <p>
+    WebGLで用いたいデータベースの値を、test.phpでechoします。<br>
+  </p>
+  <p>
+    echoした値が、WebGL側のrequest.downloadHnadler.textで返される文字列になるので、
+    この値をWebGL側で使うことができます。
+  </p>
+  <p>
+    WebGLに渡したいデータベースの値が複数個である場合は、例えば、リクエストを送られるphpファイル
+    で、複数のデータをカンマで区切った文字列としてechoし、WebGL側でカンマ毎にとりだして使う。等の
+    方法があると思います。
+  </p>
+</div>
+
+<div class="about_check">
+<h3>正しく動くかチェック</h3>
+<p>
+  ブラウザのコンソールにrequest.downloadHandler.textの値を表示して、正しく目的の値が取得できているかを
+  確認します。Unity WebGLからブラウザのコンソールに任意の文字列を表示する方法は、
+  本サイトのメモ"<a href="../useconsole/index.html">デバッグのために、Unity WebGLから文字列をブラウザのコンソールに表示</a>"
+  に記しています。
+</p>
+<img src="img/check_cord.png" class="img_chech_cord">
+<p>
+  上のコードのように、Unityのスクリプトへ、ブラウザのコンソールにrequest.downloadHandler.textの値を表示する命令を追加します。
+</p>
+<div class="check_console_block">
+  <img src="img/check_console.png" align="left" class="img_check_console">
+  <div class="check_console_text">
+    <p>
+      ブラウザでWebGLの埋め込まれたページを開き、F12キーでコンソールを見ると、左図のように、
+      所定のデータベースの値を取得できていることが確認できます。
+    </p>
+    <p>
+    本節で用いているLogUtil.OutputConsoleLogはデフォルトでは使用できません。
+    使うためには"<a href="../useconsole/index.html">デバッグのために、Unity WebGLから文字列をブラウザのコンソールに表示</a>"
+    のように設定を行ってください。
+  </p>
+</div>
+</div>
+</div>
+
+<div class="toppage_block">
+  <a href="../../index.html" class="link_to_toppage">トップページへ</a>
+</div>
+
+</div>
+
+<footer>
+  <a href = "privacy_policy.html" class="plicy">プライバシーポリシー</a>
+</footer>
+
+</body>
+
+</html>
