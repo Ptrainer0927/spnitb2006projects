@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <!-- Google AdSence -->
+    <script data-ad-client="ca-pub-8054378565932101" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168768697-1"></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | GraphicsN_TA_tanaka</title>
+    <title>Unityでメッシュを動かしたりシェーダー使ったり -アプリとか</title>
+    <meta name="description" content="Unityでメッシュを動かしたり、シェーダーを使ったりして、
+    クリックするとメッシュが弾けるものを作り、それをWebGL形式でビルドしたものを置きました。
+    メッシュに弾が当たって、当たった箇所が砕け散る、みたいなエフェクト的なものを作りたかった。">
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
@@ -13,13 +25,55 @@
     </script>
   </head>
   <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">test webGL</div>
+    <div class="page_title">
+      <h1>Unityでメッシュを動かしたりシェーダー使ったり</h1>
+    </div>
+
+    <div class="app_abstruct">
+      <p>
+        Unityでメッシュの頂点を動かしたり、シェーダーを使ったりして作ったものを置きました。<br>
+        メッシュをクリックすると、カメラからクリック位置の方向へ、メッシュが飛び散ります。
+        弾が当たってメッシュが砕け散るみたいなエフェクトのようなものを作りたかった。<br>
+      </p>
+    </div>
+
+    <div class="notice_mobile">
+      <p>(*)モバイル端末だと正しく動作しません（Unityのアップデートで動くようになるかも）</p>
+    </div>
+
+    <div class="explanation">
+      <h4>操作方法</h4>
+      <p>骸骨をクリック<br>
+        マウスホイール前後でズーム
+      </P>
+    </div>
+
+    <div class="container">
+      <div class="webgl-content">
+        <div id="unityContainer" style="width: 960px; height: 600px"></div>
+        <div class="footer">
+          <div class="webgl-logo"></div>
+          <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+          <div class="title">test webGL</div>
+        </div>
       </div>
     </div>
+
+    <div class="text1">
+      <p>
+        メッシュを頂点表示にしてしまったため、描画の前後関係がおかしくなっちゃう<br>
+        頂点表示にせず、小さい球のメッシュを置くとかした方が、奥行きもわかりやすくなって良かったかも
+      </P>
+    </div>
+
+
+    <div class="toppage_block">
+      <a href="../../index.html" class="link_to_toppage">トップページへ</a>
+    </div>
+
+    <div class="page_footer">
+      <a href = "../privacy_policy.html" class="plicy">プライバシーポリシー</a>
+    </div>
+
   </body>
 </html>
