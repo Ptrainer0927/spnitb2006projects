@@ -21,7 +21,7 @@ html, body{
   padding-left: 50px;
 }
 .app_abstruct{
-  background-color: lavender;
+  background-color: papayawhip;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -29,15 +29,26 @@ html, body{
   padding-left: 60px;
 }
 
+.under_block{
+  background-color: lavender;
+}
+
 .text_1{
-  align: center;
+  margin: 0 auto;
+  width: 960px;
 }
 .text_1 h4{
-  padding-left: 330px;
+  padding-top: 30px;
 }
 .text_1 p{
-  padding-left: 350px;
-  padding-right: 350px;
+  padding-left: 20px;
+}
+.text_1 h3{
+  padding-top: 30px;
+}
+#link_document1{
+  padding-left: 20px;
+  font-size: 18px;
 }
 
 
