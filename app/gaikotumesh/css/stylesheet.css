@@ -25,6 +25,7 @@ html, body{
 }
 .app_abstruct p{
   padding-left: 60px;
+  font-size: 18px;
 }
 
 .notice_mobile{
@@ -37,11 +38,15 @@ html, body{
 }
 .explanation p{
   padding-left: 5px;
+  font-size: 18px;
 }
 
 .text1{
   width: 960px;
   margin: 0 auto;
+}
+.text1 p{
+  font-size: 18px;
 }
 
 
